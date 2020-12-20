@@ -22,7 +22,7 @@ TCPSocket::TCPSocket() {
 	}
 }
 
-int TCPSocket::init(std::string port ) {
+int TCPSocket::init(std::string port) {
 
 	ZeroMemory(&hints, sizeof(hints));
 	hints.ai_family = AF_INET;
@@ -70,29 +70,30 @@ int TCPSocket::listenSoc() {
 }
 
 int TCPSocket::connectSoc() {
-	int i=0;
-	for (  auto it = ClientSocketArray.begin(); it != ClientSocketArray.end(); it++) {
-
+	for (auto it = ClientSocketArray.begin(); it != ClientSocketArray.end(); it++) {
 		if (*it == 0) {
+			ClientSocketArray.erase(it);
 			break;
 		}
-		i++;
 	}
-	if (i == ClientSocketArray.size()) {
-		ClientSocketArray.push_back(INVALID_SOCKET);
-		i=ClientSocketArray.size()-1;
-	}
+	int size = ClientSocketArray.size();
+	printf("size = %d", size);
+	SOCKET clientSocket;
+
+	clientSocket = INVALID_SOCKET;
+
 
 	// Accept a client socket
-	ClientSocketArray[i] = accept(ListenSocket, NULL, NULL);
-	if (ClientSocketArray[i] == INVALID_SOCKET) {
+	clientSocket = accept(ListenSocket, NULL, NULL);
+	if (clientSocket == INVALID_SOCKET) {
 		printf("accept failed: %d\n", WSAGetLastError());
 		closesocket(ListenSocket);
 		WSACleanup();
 		return 0;
 	}
-	printf("accept client %d \n", i );
-	return i;
+	printf("accept client  \n");
+	ClientSocketArray.push_back(clientSocket);
+	return size;
 }
 int TCPSocket::recSoc(int s) {
 	char recvbuf[512];
@@ -103,6 +104,8 @@ int TCPSocket::recSoc(int s) {
 		iResult = recv(ClientSocketArray[s], recvbuf, recvbuflen, 0);
 		if (iResult > 0) {
 			printf("Bytes received: %d\n", iResult);
+			recvbuf[iResult] = '\0';
+			printf("Received msg: %s---%d\n", recvbuf, strlen(recvbuf));
 
 			// Echo the buffer back to the sender
 			iSendResult = send(ClientSocketArray[s], recvbuf, iResult, 0);

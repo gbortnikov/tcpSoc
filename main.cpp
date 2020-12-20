@@ -16,5 +16,6 @@ int main() {
 	{
 		int s = soc.connectSoc();
 		soc.threads.push_back(std::thread (&TCPSocket::recSoc,&soc ,s));
+
 	}
 }
