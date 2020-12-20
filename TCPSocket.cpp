@@ -76,8 +76,7 @@ int TCPSocket::connectSoc() {
 			break;
 		}
 	}
-	int size = ClientSocketArray.size();
-	printf("size = %d", size);
+
 	SOCKET clientSocket;
 
 	clientSocket = INVALID_SOCKET;
@@ -93,7 +92,9 @@ int TCPSocket::connectSoc() {
 	}
 	printf("accept client  \n");
 	ClientSocketArray.push_back(clientSocket);
-	return size;
+	int size = ClientSocketArray.size();
+	printf("size = %d", size);
+	return size-1;
 }
 int TCPSocket::recSoc(int s) {
 	char recvbuf[512];
@@ -120,7 +121,8 @@ int TCPSocket::recSoc(int s) {
 		}
 		else if (iResult == 0) {
 			printf("Connection closing...\n");
-			ClientSocketArray[s] = 0;
+			ClientSocketArray.erase(ClientSocketArray.begin() + s);
+				//[s] = 0;
 		}
 		else {
 			printf("recv failed: %d\n", WSAGetLastError());

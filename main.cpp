@@ -15,7 +15,8 @@ int main() {
 	while (true)
 	{
 		int s = soc.connectSoc();
-		soc.threads.push_back(std::thread (&TCPSocket::recSoc,&soc ,s));
+		printf("s=%d",s);
+		soc.threads.push_back(std::thread(&TCPSocket::recSoc, &soc, s));
 
 	}
 }
