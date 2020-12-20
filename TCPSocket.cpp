@@ -20,6 +20,8 @@ TCPSocket::TCPSocket() {
 	if (iResult != 0) {
 		printf("WSAStartup failed: %d\n", iResult);
 	}
+	idclient = 0;
+
 }
 
 int TCPSocket::init(std::string port) {
@@ -70,14 +72,8 @@ int TCPSocket::listenSoc() {
 }
 
 int TCPSocket::connectSoc() {
-	for (auto it = ClientSocketArray.begin(); it != ClientSocketArray.end(); it++) {
-		if (*it == 0) {
-			ClientSocketArray.erase(it);
-			break;
-		}
-	}
-
 	SOCKET clientSocket;
+	int id = idclient;
 
 	clientSocket = INVALID_SOCKET;
 
@@ -91,11 +87,14 @@ int TCPSocket::connectSoc() {
 		return 0;
 	}
 	printf("accept client  \n");
-	ClientSocketArray.push_back(clientSocket);
-	int size = ClientSocketArray.size();
-	printf("size = %d", size);
-	return size-1;
+	ClientSocketArray.insert(std::pair<char, int>(id, clientSocket));
+		//push_back(clientSocket);
+		//int size = ClientSocketArray.
+		//printf("size = %d", size);
+	idclient++;
+	return id;
 }
+
 int TCPSocket::recSoc(int s) {
 	char recvbuf[512];
 	int iResult, iSendResult;
@@ -121,7 +120,7 @@ int TCPSocket::recSoc(int s) {
 		}
 		else if (iResult == 0) {
 			printf("Connection closing...\n");
-			ClientSocketArray.erase(ClientSocketArray.begin() + s);
+			ClientSocketArray.erase(ClientSocketArray.erase(s));
 				//[s] = 0;
 		}
 		else {

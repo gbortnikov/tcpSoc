@@ -9,6 +9,7 @@
 #include <string>
 #include <vector>
 #include <thread>
+#include <map>
 //
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -18,7 +19,9 @@ private:
 	WSADATA wsaData;
 	int iResult;
 	SOCKET ListenSocket = INVALID_SOCKET;
-	std::vector<SOCKET> ClientSocketArray;
+	std::map <int, SOCKET> ClientSocketArray;
+	int idclient;
+
 
 
 public:
