@@ -142,12 +142,118 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="rapidjson-master\example\archiver\archiver.cpp" />
+    <ClCompile Include="rapidjson-master\example\archiver\archivertest.cpp" />
+    <ClCompile Include="rapidjson-master\example\capitalize\capitalize.cpp" />
+    <ClCompile Include="rapidjson-master\example\condense\condense.cpp" />
+    <ClCompile Include="rapidjson-master\example\filterkeydom\filterkeydom.cpp" />
+    <ClCompile Include="rapidjson-master\example\filterkey\filterkey.cpp" />
+    <ClCompile Include="rapidjson-master\example\jsonx\jsonx.cpp" />
+    <ClCompile Include="rapidjson-master\example\lookaheadparser\lookaheadparser.cpp" />
+    <ClCompile Include="rapidjson-master\example\messagereader\messagereader.cpp" />
+    <ClCompile Include="rapidjson-master\example\parsebyparts\parsebyparts.cpp" />
+    <ClCompile Include="rapidjson-master\example\prettyauto\prettyauto.cpp" />
+    <ClCompile Include="rapidjson-master\example\pretty\pretty.cpp" />
+    <ClCompile Include="rapidjson-master\example\schemavalidator\schemavalidator.cpp" />
+    <ClCompile Include="rapidjson-master\example\serialize\serialize.cpp" />
+    <ClCompile Include="rapidjson-master\example\simpledom\simpledom.cpp" />
+    <ClCompile Include="rapidjson-master\example\simplepullreader\simplepullreader.cpp" />
+    <ClCompile Include="rapidjson-master\example\simplereader\simplereader.cpp" />
+    <ClCompile Include="rapidjson-master\example\simplewriter\simplewriter.cpp" />
+    <ClCompile Include="rapidjson-master\example\sortkeys\sortkeys.cpp" />
+    <ClCompile Include="rapidjson-master\example\tutorial\tutorial.cpp" />
+    <ClCompile Include="rapidjson-master\test\perftest\misctest.cpp" />
+    <ClCompile Include="rapidjson-master\test\perftest\perftest.cpp" />
+    <ClCompile Include="rapidjson-master\test\perftest\platformtest.cpp" />
+    <ClCompile Include="rapidjson-master\test\perftest\rapidjsontest.cpp" />
+    <ClCompile Include="rapidjson-master\test\perftest\schematest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\allocatorstest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\bigintegertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\clzlltest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\cursorstreamwrappertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\documenttest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\dtoatest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\encodedstreamtest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\encodingstest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\filestreamtest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\fwdtest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\istreamwrappertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\itoatest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\jsoncheckertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\namespacetest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\ostreamwrappertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\pointertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\prettywritertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\readertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\regextest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\schematest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\simdtest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\strfunctest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\stringbuffertest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\strtodtest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\unittest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\valuetest.cpp" />
+    <ClCompile Include="rapidjson-master\test\unittest\writertest.cpp" />
+    <ClCompile Include="tableTopic.cpp" />
     <ClCompile Include="TCPSocket.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="rapidjson-master\example\archiver\archiver.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\allocators.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\cursorstreamwrapper.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\document.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\encodedstream.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\encodings.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\error\en.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\error\error.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\filereadstream.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\filewritestream.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\fwd.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\clzll.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\itoa.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\meta.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\pow10.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\regex.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\stack.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\strtod.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\internal\swap.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\memorybuffer.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\memorystream.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\pointer.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\prettywriter.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\rapidjson.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\reader.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\schema.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\stream.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\stringbuffer.h" />
+    <ClInclude Include="rapidjson-master\include\rapidjson\writer.h" />
+    <ClInclude Include="rapidjson-master\test\perftest\perftest.h" />
+    <ClInclude Include="rapidjson-master\test\unittest\unittest.h" />
+    <ClInclude Include="tableTopic.hpp" />
     <ClInclude Include="TCPSocket.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="rapidjson-master\doc\misc\footer.html" />
+    <None Include="rapidjson-master\doc\misc\header.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\boost.1.72.0.0\build\boost.targets" Condition="Exists('packages\boost.1.72.0.0\build\boost.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\boost.1.72.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost.1.72.0.0\build\boost.targets'))" />
+  </Target>
 </Project>

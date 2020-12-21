@@ -4,11 +4,15 @@
 //
 #include "TCPSocket.hpp"
 
+#include "rapidjson-master/include/rapidjson/writer.h"
+#include "rapidjson-master/include/rapidjson/rapidjson/stringbuffer.h"
+#include "../../rapidjson/writer.h"
+
 
 int main() {
 
 	TCPSocket soc;
-	soc.init("7777");
+	soc.init("9999");
 	soc.creatSoc();
 	soc.bindSoc();
 	soc.listenSoc();

@@ -10,6 +10,9 @@
 #include <vector>
 #include <thread>
 #include <map>
+
+
+
 //
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -21,7 +24,7 @@ private:
 	SOCKET ListenSocket = INVALID_SOCKET;
 	std::map <int, SOCKET> ClientSocketArray;
 	int idclient;
-
+	struct addrinfo* result = NULL, * ptr = NULL, hints;
 
 
 public:
@@ -34,5 +37,6 @@ public:
 	int listenSoc();
 	int connectSoc();
 	int recSoc(int s);
+	int handler(std::string str);
 };
 

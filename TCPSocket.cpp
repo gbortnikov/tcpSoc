@@ -1,15 +1,5 @@
 #include "TCPSocket.hpp"
-
-
-//#include <windows.h>
-//#include <winsock2.h>
-//#include <ws2tcpip.h>
-//#include <iphlpapi.h>
-//#include <stdio.h> 
-////
-//#pragma comment(lib, "Ws2_32.lib")
-
-struct addrinfo* result = NULL, * ptr = NULL, hints;
+#include "boost/serialization/nvp.hpp"
 
 
 
@@ -74,11 +64,8 @@ int TCPSocket::listenSoc() {
 int TCPSocket::connectSoc() {
 	SOCKET clientSocket;
 	int id = idclient;
-
 	clientSocket = INVALID_SOCKET;
-
-
-	// Accept a client socket
+	
 	clientSocket = accept(ListenSocket, NULL, NULL);
 	if (clientSocket == INVALID_SOCKET) {
 		printf("accept failed: %d\n", WSAGetLastError());
@@ -88,9 +75,6 @@ int TCPSocket::connectSoc() {
 	}
 	printf("accept client  \n");
 	ClientSocketArray.insert(std::pair<char, int>(id, clientSocket));
-		//push_back(clientSocket);
-		//int size = ClientSocketArray.
-		//printf("size = %d", size);
 	idclient++;
 	return id;
 }
@@ -121,7 +105,6 @@ int TCPSocket::recSoc(int s) {
 		else if (iResult == 0) {
 			printf("Connection closing...\n");
 			ClientSocketArray.erase(ClientSocketArray.erase(s));
-				//[s] = 0;
 		}
 		else {
 			printf("recv failed: %d\n", WSAGetLastError());
@@ -129,6 +112,11 @@ int TCPSocket::recSoc(int s) {
 			WSACleanup();
 			return 1;
 		}
-
 	} while (iResult > 0);
+}
+
+int TCPSocket::handler(std::string str) {
+
+
+	return 0;
 }
